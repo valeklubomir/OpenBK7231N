@@ -429,7 +429,9 @@ extern int is_apm_bss_config_empty(void);
  *  @param  first set PS_DEEP_CTRL_PARAM struct.
  */
 extern void bk_enter_deep_sleep_mode ( PS_DEEP_CTRL_PARAM *deep_param );
-
+extern void bk_enter_deep_sleep(UINT32 g_gpio_index_map, UINT32 g_gpio_edge_map);
+void bk_wlan_ps_wakeup_with_peri(UINT8 uart2_wk, UINT32 gpio_index_map);
+void bk_wlan_ps_wakeup_with_timer(UINT32 sleep_time);
 
 /** @brief  Enable dtim power save,close rf,and wakeup by ieee dtim dynamical
  *

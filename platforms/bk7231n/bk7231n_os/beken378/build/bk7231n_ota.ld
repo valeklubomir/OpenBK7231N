@@ -97,6 +97,7 @@ SECTIONS
         *(.text.portDISABLE_IRQ)
         *(.text.vPortEnterCritical)
         *(.text.vPortExitCritical)
+        *(.code_IRAM)
     } > itcm AT>flash
     _itcmcode_flash_begin = LOADADDR(.itcm.code);
     _itcmcode_ram_begin = ADDR(.itcm.code);

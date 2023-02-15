@@ -52,7 +52,7 @@
 #define REG_WR32(_pBase, _offset, _data) \
 	(*((volatile UINT32 *)(_pBase + _offset)) = _data)
 
-#define REG_READ(addr)          (*((volatile UINT32 *)(addr)))
-#define REG_WRITE(addr, _data) 	(*((volatile UINT32 *)(addr)) = (_data))
+#define REG_READ(_addr)          (*((volatile UINT32 *)(_addr)))
+#define REG_WRITE(_addr, _data) 	(*((volatile UINT32 *)(_addr)) = (_data))
 
 #endif

@@ -989,7 +989,7 @@ CPPDEFINES += -DPLATFORM_BK7231N=1
 CPPDEFINES += -DPLATFORM_BEKEN=1
 
 CCFLAGS = $(CPPDEFINES)
-CCFLAGS += -g -mthumb -mcpu=arm968e-s -march=armv5te -mthumb-interwork -mlittle-endian -Os
+CCFLAGS += -g -mthumb -mcpu=arm968e-s -march=armv5te -mthumb-interwork -mlittle-endian -Os -fno-aggressive-loop-optimizations
 CCFLAGS += -ffunction-sections -Wall -fsigned-char -fdata-sections -Wunknown-pragmas -nostdlib -Wno-unused-function -Wno-unused-but-set-variable
 
 CXXFLAGS = $(CCFLAGS)

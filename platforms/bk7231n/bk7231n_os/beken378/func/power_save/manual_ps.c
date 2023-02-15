@@ -68,10 +68,10 @@ void bk_wlan_ps_wakeup_with_peri( UINT8 uart2_wk, UINT32 gpio_index_map)
 
 void power_save_wakeup_with_peri( UINT8 uart2_wk, UINT32 gpio_index_map)
 {
-    UINT32 reg, ret;
+    UINT32 reg;
     UINT32 param = 0;
     UINT32 i;
-    UINT32    gpio_stat_cfg[32];
+    UINT32 gpio_stat_cfg[32];
 
     if(power_save_ps_mode_get() != PS_NO_PS_MODE)
     {
@@ -81,7 +81,7 @@ void power_save_wakeup_with_peri( UINT8 uart2_wk, UINT32 gpio_index_map)
 
     for (i = 0; i < GPIONUM; i++)
     {
-        gpio_stat_cfg[i] = REG_READ(0x00802800 + i * 4);
+        gpio_stat_cfg[i] = REG_READ(0x00802800UL + i * 4UL);
 
         if (gpio_index_map & (0x01UL << i))
         {
@@ -127,7 +127,7 @@ void power_save_wakeup_with_peri( UINT8 uart2_wk, UINT32 gpio_index_map)
             BkGpioDisableIRQ(i);
         }
 
-        REG_WRITE(0x00802800 + i * 4, gpio_stat_cfg[i]);
+        REG_WRITE(0x00802800UL + i * 4UL, gpio_stat_cfg[i]);
     }
 
     power_save_ps_mode_set(PS_NO_PS_MODE);
